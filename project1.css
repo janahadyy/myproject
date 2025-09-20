@@ -1,0 +1,926 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+body{
+    height:fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    background-color: beige;
+    opacity:0.8;
+    width: 100%;
+    height:60px;
+    position: fixed;
+    z-index:5;
+    top:0
+}
+.img1{
+    height:100%;
+    width:120px;
+    float:left;
+
+}
+li{
+    float:right;
+    margin-right:15px;
+     margin-top:15px;
+    list-style-type: none;
+    
+}
+li a{
+    color:black;
+    text-decoration: none; 
+    position:relative;
+    padding-bottom: 5px;
+
+}
+li a:hover{
+    font-weight: bold;
+
+}
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;              /* start hidden */
+  height: 2px;            /* line thickness */
+  background-color: rgb(241, 170, 135);
+  transition:  1s;
+
+}
+
+li a:hover::after {
+  width: 100%;            /* expands fully */
+}
+
+
+.container{
+    background-image: url(images/natural-cosmetic-products-concept-high-view-photo-empty-place-surrounded-by-cosmetic-containers-eucalyptus-fern-foliage-isolated-beige-background-with-copyspace_352249-10997.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    width:100%;
+    height:700px;
+    margin:auto;
+     border:none;
+     border-radius: 10px;
+    position:relative;
+    /* text-align: center; */
+    
+    z-index:1;
+    
+}
+    .pop-up{
+        width:130px;
+        height:140px;
+        border:1px solid rgb(241, 170, 135);
+        border-radius:10px;
+        background-color: white;
+        top:35px;
+        left:0;
+        padding:10px;
+        visibility:hidden;
+        z-index:10;
+        position: absolute;
+    }
+    .pop-up p{
+        margin-top:15px;
+        position:relative;
+    }
+    .blog{
+        position:relative;
+    }
+    .pop-up p::after{
+         content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;              
+  height: 2px;            
+  background-color: rgb(241, 170, 135);
+  transition:  1s;
+}
+
+.pop-up p:hover::after{
+    width:100%;
+}
+.blog:hover .pop-up,
+.pop-up:hover {
+  visibility: visible;
+}
+
+    .blog:hover .pop-up{
+        visibility: visible;
+
+    }
+/* .container-overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    height:100%;
+    width:100%;
+    border:none;
+    position:absolute;
+     top:0;
+    left:0; 
+    pointer-events: none;   
+    z-index:1;
+    padding-top: 180px;  
+    padding-left: 200px;      
+} */
+
+.container-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: 1;
+
+    /* Centering magic */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+
+    text-align: center;
+    padding: 0;  /* remove the manual offsets */
+}
+
+.container h2{
+    font-size: 59px;
+     text-align: center;
+     color:white;
+     z-index: 7;
+}
+
+.Ptext{
+    font-size: 20px;
+    width:460px;
+    text-align: center;
+    /* margin-left:350px; */
+     margin: 20px auto;  
+    margin-top:25px;
+    font-weight: bold;
+    color:white;
+    margin-bottom:20px;
+
+}
+.buttons {
+    margin: 35px auto 0 auto; 
+}
+.btn2,.btn1{
+    width:90px;
+    height:35px;
+    border:none;
+    border-radius:10px;
+    background-color:white;
+    margin-right:10px;
+    z-index:7; 
+}
+.btn1{
+    background-color:RGB(230, 200, 160);   
+}
+.btn2:hover{
+    background-color:RGB(230, 200, 160);  
+}
+
+.btn1:hover{
+    background-color:white;
+
+}
+.search{
+    float:left;
+    margin-top:15px;
+    margin-right:20px;
+    border:1px solid black;
+    border-radius:15px;
+    height:25px;
+    width:200px;
+    background-color:white;
+    padding-left: 25px;
+}
+.search-bar{
+    position:relative;
+     display: inline-block;
+}
+.icon{
+    position:absolute;
+   z-index:5;
+   left:10px;
+   color:grey;
+   top:50%;
+    pointer-events: none; 
+}
+.title-text{
+    text-align: center;
+    margin-top:60px;
+    font-size:30px;
+    font-weight: bold;
+    text-transform:capitalize;
+    display:block;
+}
+.hr1{
+    width:10%;
+    margin:auto;
+    margin-top:5px;
+    margin-bottom:20px;
+    border:none;
+    border-top:2px solid rgb(241, 170, 135);
+    color:grey;
+}
+.categories{
+     /* width:90%;
+    margin:auto;
+    text-align:center; */
+    /* position:relative; */
+     width: fit-content;
+    margin: 0 auto;
+}
+.categories::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*      */
+
+.cat1,.cat2,.cat3{
+     border:3px solid   rgba(241, 170, 135, 0.514);
+    border-radius:10px; 
+    float:left;
+    margin-left:20px;
+    height: 360px;
+    width:250px;
+    padding:15px;
+    
+}
+.cat-title{
+    text-align: center;
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom:10px;
+}
+.a1,.a2{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom:10px;
+    margin: 10px auto;
+    margin-top:10px;
+    color:rgb(0, 0, 116);
+    font-size:14px;
+    font-weight: bold;
+}
+.a2{
+     margin-top:20px;
+}
+.p1 {
+    word-wrap: normal; 
+    word-break: normal;
+    white-space: normal;
+    text-align:center;
+    margin-left:10px;
+    margin-right:10px;
+    color:rgb(99, 98, 98)
+}
+.img2{
+    height:150px;
+    width:200px;
+    /* margin:0 auto;; */
+}
+.product-container{
+    margin-left:160px;
+}
+.products{
+    width:100%;
+    background-color:beige;
+    
+    min-height:650px;
+    margin-top:50px;
+}
+.productsgroup1,.productsgroup2{
+    margin:auto;
+    width:90%;
+    position:relative;
+    /* margin-top:50px; */
+}  
+.productsgroup1::after,
+.productsgroup2::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.productgroup1{
+    margin-top:20px;
+}
+
+   .product1,.product2,.product3{
+       margin-bottom:20px;
+   }
+   .procuts-container productsgroup1{
+    margin-top:10px;
+   }
+/*       */
+.product1,.product2,.product3,.product4,.product5,.product6{
+     background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    width:280px;
+    height:280px;
+    border:none;
+    border-radius: 15px;
+    margin-left:20px;
+    float:left;
+    margin-top:10px;
+}
+.product1{
+    background-image: url(images/sephora_collection_clarifying_face_body_cleanser_face_body_cleanser_200_ml-1683271004.webp);
+}
+.product2{
+    background-image:url(images/Face-Serum-Serum-for-Mature-Skin-Secretion-Filtrate-for-Dull-Skin-Fine-Lines-Anti-Aging-Facial-Serum-with-Vitamin-C_a1b8dea2-e525-4b5b-b85d-05c1a1997062.3298345b84dfd8635ee766fe4889ecda.webp);
+
+}
+.product3{
+    background-image:url(images/OIP.webp);
+}
+.product4{
+    background-image: url(images/th.webp);
+}
+.product5{
+    background-image:url(images/victoria-secret-body-splash-coconutpassion-importado-eua-original-promocao20190923181037.jpg);
+
+}
+.product6{
+    background-image:url(images/1648560885-10951818-4364712400385938.avif);
+}
+     
+.product-name{
+    text-align: center;
+    background-color: rgba(102, 98, 98, 0.521);
+    background-size: cover;
+    height:280px;
+    border:none;
+    border-radius: 15px;
+    padding-top:120px;
+    font-size:25px;
+    visibility: hidden;
+}
+.p-name{
+    font-size:16px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.product1:hover .product-name{
+    visibility:visible;
+}
+.product2:hover .product-name{
+    visibility:visible;
+}
+.product3:hover .product-name{
+    visibility:visible;
+}
+.product4:hover .product-name{
+    visibility:visible;
+}
+.product5:hover .product-name{
+    visibility:visible;
+}
+.product6:hover .product-name{
+    visibility:visible;
+}
+.prosuct-icon{
+    margin-top:5px;
+}
+.what-we-offer{
+    width:90%;
+    margin: auto;
+    text-align: center;
+    margin-top:50px;
+}
+
+.offer-group1,.offer-group2{
+    width:70%;
+    margin:auto;
+    position:relative;
+    margin-top:20px;
+}
+.offer-group1{
+    margin-top: -30px;
+}
+.offer-group1::after,
+.offer-group2::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.offer{
+    border:3px solid rgba(241, 170, 135, 0.514);
+    border-radius:10px;
+    height:180px;
+    width:250px;
+    float:left;
+    padding:10px;
+    margin-top:30px;
+    margin-left:20px;
+    margin-right:10px;
+    position:relative;
+}
+.offer::after{
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    position:absolute;
+    content: '';
+    background-color: black;
+    border-radius: 10px;
+}
+.offer:hover::after{
+    height:100%;
+    width:100%;
+    opacity:0.3;
+    transition:1s;
+
+}
+.offer:hover h3{
+    color:rgb(65, 140, 238);
+}
+.offer:hover p{
+    color:black;
+    font-weight:bold;
+}
+.offer-text{
+    text-align: center;
+    font-size:14px;
+    margin-top:10px;
+    color:rgb(99, 98, 98);
+    font-weight:bold;
+}
+
+.icon-offer{
+    margin-right:190px;
+font-size:28px;
+color:rgb(241, 170, 135);
+}
+.hr2{
+    width:80px;
+    margin-top:80px;
+    margin-bottom:20px;
+    margin-left:50px;
+    border:none;
+    border-top:2px solid rgb(241, 170, 135);
+}
+.about-us{
+    width:95%;
+    /* margin:auto;
+    text-align: center; */
+    margin-top:140px;
+    margin-bottom: 40px;
+}
+.head{
+    
+    margin-left:50px;
+    text-transform: capitalize;
+    font-size: 35px;
+    margin-bottom:-70px;
+    /* margin-top:50px; */
+
+}
+
+.img3{
+    width:350px;
+    height:420px;
+    margin-top:-55px;
+    float:right;
+    border-radius: 10px;
+}
+.p-about-text{
+    color:rgb(122, 121, 121) ;
+    margin-left:40px;
+    margin-bottom:50px;
+    margin-top:10px;
+}
+.about-text{
+    color:rgb(122, 121, 121) ;
+    /* margin-top:5px; */
+    display:inline-block;
+    font-size:14px;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+.checkmark{
+    margin-left:40px;
+    color:rgb(241, 170, 135);
+}
+
+.circles{
+    margin-left:1075px;
+    margin-top:140px;
+}
+.circle{
+    margin-right:10px;
+}
+.circle1{
+    color:rgb(241, 170, 135);
+}
+.circle2,.circle3{
+    color:rgb(122, 121, 121) ;
+}
+.circle2:hover{
+    color:rgb(241, 170, 135)
+}
+.circle3:hover{
+    color:rgb(241, 170, 135);
+}
+.stats{
+    background-image:url(images/beige-product-backdrop-free-photo-hd-background_915071-98501.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top:60px;
+    height:450px;
+    width:100%;
+}
+.overlay{
+    background-color: rgba(0, 0, 0, 0.267);
+    height:100%;
+    width:100%;
+    border:none;
+}
+.overlay-icons{
+    margin-left:350px;
+    width:90%;
+    text-align:center;
+}
+.overlay-icons1,.overlay-icons2,.overlay-icons3,.overlay-icons4{
+    float:left;
+    margin-top:170px;
+    margin-right:65px;
+}
+.overlay-icons p{
+    color: white;
+}
+.overlay-icons h3{
+    color: white;
+}
+.icon-stats{
+    color: RGB(230, 200, 160);
+    font-size:40px;
+    margin-bottom:10px;
+}
+.pricing-table{
+    width:90%;
+    margin:auto;
+    margin-top:50px;
+    margin-bottom:50px;
+    text-align: center;
+    
+}
+.pricing-table h2{
+    font-size:30px;
+    font-weight: bold;
+    margin-bottom:20px;
+    text-transform: capitalize;  
+}
+.pricing-table hr{
+    width:10%;
+    margin:auto;
+    margin-top:5px;
+    margin-bottom:20px;
+    border:none;
+    border-top:2px solid rgb(241, 170, 135);
+}
+.pricing-cards{
+    width:70%;
+    margin: auto;
+    margin-bottom:100px;
+}
+.pricing-card{
+    border:3px solid rgba(241, 170, 135, 0.514);
+    border-radius:10px;
+    height:400px;
+    width:250px;
+    float:left;
+    margin-left:25px;
+    padding:15px;
+    margin-top:30px;
+    position:relative;
+}
+.pricing-card::after{
+     width:100%;
+     height:0;
+    top:0;
+    left:0;
+    background-color:black;
+    position:absolute;
+    content:"";
+    opacity:0;
+    transition:1s;
+
+
+}
+.pricing-card:hover::after{
+    height:100%;
+    width:100%;
+    opacity:0.3;
+   
+}
+   .pricing-card:hover button{
+      background-color: rgb(255, 255, 255);
+   }
+
+
+
+.pricing-cards::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.price{
+    border:1px solid  rgb(241, 170, 135);
+    border-radius:50%;
+    width:90px;
+    height:90px;
+    margin:auto
+}
+.price p{
+    margin-top:25px;
+    font-size:16px;
+    font-weight: bold;
+    color:rgb(99, 98, 98);
+}
+.features{
+    margin-top:10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.pricing-card button{
+    margin-top:20px;
+    width:120px;
+    height:35px;
+    border:none;
+    border-radius:10px;
+    background-color:rgba(241, 170, 135, 0.514);
+    font-weight: bold;
+}
+.pricing-card button:hover{
+    background-color:rgba(255, 218, 238, 0.781);
+}
+
+.employees{
+    background-image:url(images/ai-generated-ai-generative-photo-realistic-illustration-different-skin-body-care-products_95211-2125.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    width:100%;
+    height:500px;
+     border:none;
+    position:relative;
+    margin-top:75px;
+    z-index:2;
+    padding-top:
+}
+.employee-overlay{
+    background-color: rgba(0, 0, 0, 0.226);
+    height:100%;
+    width:100%;
+    border:none;
+    position:absolute;
+     top:0;
+    left:0; 
+    pointer-events: none; 
+    padding-top: 35px;
+}
+.employee-img{
+    width:120px;
+    height:120px;
+    border-radius: 50%;
+    margin-top:120px;
+    border:3px solid white;
+  
+    
+}
+.employee1,.employee2{
+      float:left;
+      margin-left:300px;
+      position:
+}
+.employee-name{
+   
+}
+.employee-position{
+    font-weight:bold;
+    margin-top:5px;
+    color:white;
+}
+.employee-description {
+    /* text-align: center; */
+    font-size:16px;
+    width:300px;
+    margin-top:10px;
+}
+.our-team-title{
+    text-align: center;
+    font-size:30px;
+    font-weight: bold;
+    margin-top:65px;
+}
+.our-team-container{
+    width:80%;
+    margin:auto;
+    margin-left:180px;
+}
+.team-member{
+    float:left;
+    margin-left:30px;
+    margin-top:50px;
+    background-color: rgba(241, 170, 135, 0.514);
+    border-radius:10px;
+    text-align:center;
+    width:300px;
+    height:300px;
+    padding:15px;
+    position:relative;
+}
+.our-team-container:after{
+    content: "";
+    display: block;
+    clear: both;
+
+}
+.team-member-name{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.team-member-img{
+    width:100%;
+}
+.team-img{
+    position: relative;
+}
+.team-icons{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    
+}
+.team-member:hover .team-icons{
+    visibility: visible;
+}
+.team-member::after{
+    position:absolute;
+    content:"";
+    width:100%;
+    height:0;
+    top:0;
+    left:0;
+    background-color:black;
+    opacity:0; 
+    transition: 1s;
+}
+.team-member:hover::after{
+    height:100%;
+    width:100%;
+    opacity:0.3;
+   
+}
+.team-member:hover .team-member-name{
+    color:white;
+}
+.team-member:hover .team-member-role{
+    color:white;
+}
+.team-icons a{
+    display: block;
+    width:40px;
+    height:40px;
+    background-color: rgb(146, 177, 235);
+    color:white;
+    margin-left:auto;
+}
+.team-icons a i{
+    line-height:40px;
+}
+.recent-news-title{
+    text-align: center;
+    font-size:30px;
+    margin-top:65px;
+}
+.recent-news-container{
+    width:80%;
+    margin:auto;
+    margin-left:180px;
+    position:relative;
+}
+.news-card{
+    border:3px solid rgba(241, 170, 135, 0.514);
+    border-radius:10px; 
+    width:300px;
+    height:400px;
+    float:left;
+    margin-left:30px;
+    margin-top:50px;
+    padding:15px;
+    text-align: center;
+    position:relative;
+}
+.news-card::after{
+    top:0;
+    left:0;
+    width:100%;
+    height:0;
+    position:absolute;
+    content: '';
+    background-color: black;
+    border-radius: 10px;
+    transition:1s;
+    
+}
+.news-card:hover::after{
+    height:100%;
+    width:100%;
+    opacity:0.3;
+
+}
+
+.news-card span{
+    font-weight: bold;
+}
+.news-name{
+    font-size:14px;
+}
+.news-div{
+    position:relative;
+    margin-top:10px;
+    width:90%;  
+}
+.news-icon{
+    color:rgb(65, 140, 238);
+}
+.news-card h3{
+      text-align: center;
+      margin-top:10px;
+}
+.news-card p{
+    font-size:14px;
+    text-align:center;
+    margin-top:10px;
+    color:rgb(99, 98, 98);
+    font-weight: bold;
+}
+.news-card a{
+    text-decoration: none;
+   /* color:rgb(235, 133, 82); */
+   color:rgb(65, 140, 238);
+    margin-top:15px;
+      display:block;
+      font-weight:bold;
+}
+.recent-news-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.footer-container{
+    width:100%;
+    height:340px;
+    background-color:rgba(241, 170, 135, 0.514);
+    text-align:center;
+    margin-top:50px;
+}
+.footer-img{
+    /* margin:auto; */
+    border-radius:15px;
+    margin-top:15px;
+}
+.footer-container i{
+    margin-top:20px;
+    margin-right:10px;
+    font-size:35px;
+    background-color:rgb(65, 140, 238);
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    color:white;
+    line-height:50px;
+}
+.footer-container p{
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 14px;
+    color:rgb(99, 98, 98); 
+}
